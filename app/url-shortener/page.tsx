@@ -29,7 +29,7 @@ const Page = () => {
         className='flex flex-col items-center rounded gap-6 w-3/4 md:w-1/2'
         onSubmit={(e) => submit(e)}
       >
-        <h1 className='font-bold text-2xl md:text-4xl text-center'>
+        <h1 className='font-bold text-2xl md:text-4xl text-center text-black'>
           Shorten your long URL!
         </h1>
         {error && <p className='text-red-500 text-center text-lg'>{error}</p>}
@@ -42,7 +42,7 @@ const Page = () => {
             onChange={(e) => handleChange(e.currentTarget.value)}
             value={url}
             placeholder='Enter URL example: https://www.super-long-url.com?why=just-because-we-have-a-long-url'
-            className='p-4 bg-transparent z-10 w-full relative outline-none bg-white border-2 border-black'
+            className='p-4 bg-transparent z-10 w-full relative outline-none bg-white border-2 border-black text-black placeholder:text-gray-400'
           />
           <div className='absolute top-2 left-2 block w-full h-full bg-black'></div>
         </div>
