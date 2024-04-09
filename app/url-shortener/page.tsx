@@ -9,14 +9,16 @@ async function shortenUrlAction(formData: FormData) {
     throw new Error("URL is required");
   }
 
-  const res = await fetch({
-    method: "POST",
-    url: "https://golang-url-shortener-419717.ue.r.appspot.com/shorten",
-    body: JSON.stringify({ url: formData.get("url") }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const res = await fetch(
+    "https://golang-url-shortener-419717.ue.r.appspot.com/shorten",
+    {
+      method: "POST",
+      body: JSON.stringify({ url: formData.get("url") }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   const shortUrl = await res.json();
 
