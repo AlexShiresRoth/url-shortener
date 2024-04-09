@@ -14,7 +14,6 @@ export async function checkShortenedUrl(
   try {
     const decodedId = atob(decodeURIComponent(id));
 
-    console.log("decoded id", decodedId);
     if (!decodedId) {
       throw new Error("Invalid ID");
     }
@@ -27,8 +26,6 @@ export async function checkShortenedUrl(
     );
 
     const data = await res.json();
-
-    console.log("data?", data);
 
     return { result: data, error: null };
   } catch (error) {
@@ -64,8 +61,6 @@ export async function shortenUrlAction(url: string) {
   );
 
   const shortUrl = await res.json();
-
-  console.log("short url", shortUrl);
 
   if (!shortUrl || !shortUrl.shortened_url || !shortUrl.id) {
     throw new Error("Could not shorten url");
